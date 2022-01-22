@@ -2,6 +2,11 @@ import { render, screen } from '@testing-library/react';
 import TodoFooter from "../TodoFooter"
 import { BrowserRouter } from "react-router-dom"
 
+// THESE ARE GOOD ASSERTION EXAMPLES
+
+
+// as Link is used in the actual component for the followers I need to wrap my component with brwoserrouter
+// browserrouter is already used in index.js,
 const MockTodoFooter = ({ numberOfIncompleteTasks }) => {
     return (
         <BrowserRouter>
@@ -11,6 +16,7 @@ const MockTodoFooter = ({ numberOfIncompleteTasks }) => {
         </BrowserRouter>
     )
 }
+// use the wrapped component you just created
 
 describe("TodoFooter", () => {
   it('should render the correct amount of incomplete tasks', () => {

@@ -29,7 +29,7 @@ describe("Header", () => {
 //           title="todo"
 //         />
 //     );
-//     const h1Element = screen.getByRole("heading", { name: /todo/i });
+//     const h1Element = screen.getByRole("heading", { name: /todo/i }); // name?: TextMatch
 //     expect(h1Element).toBeInTheDocument();
 // });
 
@@ -61,7 +61,7 @@ describe("Header", () => {
 //           title="todo"
 //         />
 //     );
-//     const h1Element = await screen.findByText(/todo/i);
+//     const h1Element = await screen.findByText(/todo/i); // without the "await" it still fails
 //     expect(h1Element).toBeInTheDocument();
 // });
 
