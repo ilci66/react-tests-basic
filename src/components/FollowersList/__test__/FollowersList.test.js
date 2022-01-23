@@ -2,6 +2,8 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import FollowersList from "../FollowersList";
 
+// examples for testing async elements
+
 const MockFollowersList = () => {
     return (
         <BrowserRouter>

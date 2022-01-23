@@ -2,6 +2,9 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import Todo from "../Todo"
 import { BrowserRouter } from "react-router-dom"
 
+// Doing integration tests here (for components affecting other components)
+
+// using a Link again so don't forget to use this format 
 const MockTodo = () => {
     return (
         <BrowserRouter>
@@ -10,10 +13,13 @@ const MockTodo = () => {
     )
 }
 
+// this is mimicking the behaviour of adding a task basically
 const addTask = (tasks) => {
     const inputElement = screen.getByPlaceholderText(/Add a new task here.../i);
+    // grab the button by name
     const buttonElement = screen.getByRole("button", { name: /Add/i} );
     tasks.forEach((task) => {
+        // well, changing the target value
         fireEvent.change(inputElement, { target: { value: task } });
         fireEvent.click(buttonElement);
     })
@@ -32,6 +38,7 @@ it('should render multiple items', () => {
     render(
         <MockTodo />
     );
+    // just to keep it simple, checking for length
     addTask(["Go Grocery Shopping", "Go Grocery Shopping", "Go Grocery Shopping"])
     const divElements = screen.queryAllByText(/Go Grocery Shopping/i);
     expect(divElements.length).toBe(3)

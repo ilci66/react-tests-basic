@@ -1,9 +1,9 @@
-import { render, screen } from '@testing-library/react';
+import { getByTestId, render, screen } from '@testing-library/react';
 import TodoFooter from "../TodoFooter"
 import { BrowserRouter } from "react-router-dom"
 
 // THESE ARE GOOD ASSERTION EXAMPLES
-
+// getByTestId("somevalue") grabs the element with data-testid="somevalue"
 
 // as Link is used in the actual component for the followers I need to wrap my component with brwoserrouter
 // browserrouter is already used in index.js,
@@ -18,6 +18,8 @@ const MockTodoFooter = ({ numberOfIncompleteTasks }) => {
 }
 // use the wrapped component you just created
 
+
+// using describe because all of these tests have to do with the same component/part I want to test
 describe("TodoFooter", () => {
   it('should render the correct amount of incomplete tasks', () => {
     render(
