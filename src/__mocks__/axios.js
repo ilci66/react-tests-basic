@@ -1,3 +1,4 @@
+// the same structure that we get from the api
 const mockResponse = {
   data: {
     results: [
